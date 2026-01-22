@@ -86,6 +86,7 @@ class SimpleAudioPlayer:
 
         try:
             self.stream.write(audio_data.tobytes())
+            time.sleep(0.2)
         except Exception as e:
             print("[WARNING] Audio playback failed: " + str(e))
 
