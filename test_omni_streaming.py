@@ -37,7 +37,7 @@ class Config:
     """Configuration class"""
 
     def __init__(self):
-        self.server_url: str = "http://10.246.56.85:8091/v1"
+        self.server_url: str = "http://10.246.56.114:8091/v1"
         self.model: str = "/vepfs/public/model-public/Qwen3-Omni-30B-A3B-Instruct"
         self.output_dir: str = "./outputs"
         self.sample_rate: int = 24000
@@ -234,7 +234,7 @@ class OmniClient:
                 model=self.config.model,
                 modalities=modalities,
                 extra_body=extra_body,
-                stream=False,
+                stream=True,
             )
 
             text_response = ""
@@ -528,7 +528,7 @@ Examples:
     parser.add_argument(
         "--server-url",
         type=str,
-        default="http://10.246.56.85:8091/v1",
+        default="http://10.246.56.114:8091/v1",
         help="API server URL",
     )
     parser.add_argument(
